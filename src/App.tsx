@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   RefreshCw, 
@@ -24,14 +24,18 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Demo mode: skip login and go straight to dashboard
-  useEffect(() => {
-    window.location.href = '/frontend/index.html';
-  }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = '/frontend/index.html';
+    setIsLoading(true);
+    
+    // Demo: simulate login then redirect
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsSuccess(true);
+      setTimeout(() => {
+        window.location.href = '/frontend/index.html';
+      }, 1200);
+    }, 1500);
   };
 
   return (
@@ -137,9 +141,8 @@ export default function App() {
 
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="p-5 bg-indigo-500/5 rounded-3xl border border-indigo-500/10 mb-8 backdrop-blur-sm">
-                    <p className="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-2">Demo Credentials</p>
-                    <p className="text-sm text-slate-300">Email: <span className="font-mono font-bold text-white">admin@acme.com</span></p>
-                    <p className="text-sm text-slate-300">Password: <span className="font-mono font-bold text-white">any password</span></p>
+                    <p className="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-2">Demo Mode</p>
+                    <p className="text-sm text-slate-300">Click <span className="font-bold text-white">Sign In</span> to access the dashboard — no credentials needed.</p>
                   </div>
 
                   <div className="space-y-3">
@@ -148,7 +151,6 @@ export default function App() {
                       <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-indigo-400 transition-colors" />
                       <input 
                         type="email" 
-                        required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="admin@acme.com"
@@ -166,7 +168,6 @@ export default function App() {
                       <Lock className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-indigo-400 transition-colors" />
                       <input 
                         type="password" 
-                        required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="••••••••"

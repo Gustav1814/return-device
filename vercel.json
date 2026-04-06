@@ -4,11 +4,6 @@
   "outputDirectory": "dist",
   "routes": [
     {
-      "src": "^/$",
-      "status": 302,
-      "headers": { "Location": "/frontend/index.html" }
-    },
-    {
       "src": "/frontend/(.*)",
       "dest": "/frontend/$1"
     },
