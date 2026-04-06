@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   RefreshCw, 
@@ -24,18 +24,14 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Demo mode: skip login and go straight to dashboard
+  useEffect(() => {
+    window.location.href = '/frontend/index.html';
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    
-    // Simulate login
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSuccess(true);
-      setTimeout(() => {
-        window.location.href = '/frontend/index.html';
-      }, 1500);
-    }, 2000);
+    window.location.href = '/frontend/index.html';
   };
 
   return (
