@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "routes": [
     {
       "src": "^/$",
@@ -7,10 +9,14 @@
       "headers": { "Location": "/frontend/index.html" }
     },
     {
+      "src": "/frontend/(.*)",
+      "dest": "/frontend/$1"
+    },
+    {
       "handle": "filesystem"
     },
     {
-      "src": "/(.*)",
+      "src": "/((?!frontend/).*)",
       "dest": "/index.html"
     }
   ]
