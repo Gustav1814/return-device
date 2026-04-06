@@ -1,13 +1,11 @@
 {
   "version": 2,
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/frontend/index.html",
-      "permanent": false
-    }
-  ],
   "routes": [
+    {
+      "src": "^/$",
+      "status": 302,
+      "headers": { "Location": "/frontend/index.html" }
+    },
     {
       "handle": "filesystem"
     },
