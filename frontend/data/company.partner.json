@@ -1,0 +1,22 @@
+{
+  "name": "Acme Partner",
+  "logoUrl": "https://picsum.photos/seed/acme/200/50",
+  "faviconUrl": "https://picsum.photos/seed/acme/32/32",
+  "btnBgColor": "#10b981",
+  "btnTextColor": "#ffffff",
+  "theme": "light",
+  "settings_data": {
+    "dashboard": {
+      "widgets": [
+        { "id": "kpi_in_progress", "visible": true },
+        { "id": "kpi_completed", "visible": true },
+        { "id": "kpi_total_amount", "visible": true },
+        { "id": "kpi_device_amount", "visible": true }
+      ],
+      "charts": [
+        { "id": "shipments_trend", "visible": true, "range": "30d" },
+        { "id": "status_breakdown", "visible": true }
+      ]
+    }
+  }
+}

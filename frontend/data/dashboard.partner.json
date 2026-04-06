@@ -1,0 +1,12 @@
+{
+  "kpis": {
+    "in_progress": 1240,
+    "completed": 8432,
+    "total_amount": 42500,
+    "device_amount": 156
+  },
+  "recent_orders": [
+    { "id": "ORD-8821", "customer": "John Smith", "equipment": "MacBook Pro 16\"", "status": "In Transit", "date": "2023-10-24", "amount": 1200 },
+    { "id": "ORD-8820", "customer": "Jane Doe", "equipment": "Dell UltraSharp 27\"", "status": "Delivered", "date": "2023-10-23", "amount": 450 }
+  ]
+}

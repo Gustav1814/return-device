@@ -1,0 +1,11 @@
+{
+  "kpis": {
+    "in_progress": 15420,
+    "completed": 98432,
+    "total_amount": 1242500,
+    "commission": 124250
+  },
+  "recent_orders": [
+    { "id": "ORD-9901", "customer": "Acme Corp", "equipment": "Bulk Return (45 units)", "status": "Processing", "date": "2023-10-25", "amount": 15400 }
+  ]
+}

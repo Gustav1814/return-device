@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <h2 style="font-size: 18px; font-weight: 600;">User Management</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Team Members</h1>
+                    <button class="btn btn-primary"><i data-lucide="plus"></i> Invite User</button>
+                </div>
+
+                <div class="card reveal">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Active</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="https://i.pravatar.cc/150?u=harper" class="user-avatar" style="width: 32px; height: 32px;">
+                                            <div>
+                                                <div style="font-weight: 600;">Harper Nelson</div>
+                                                <div style="font-size: 12px; color: var(--text-muted);">harper@acme.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Admin Manager</td>
+                                    <td><span class="status-pill status-completed">Active</span></td>
+                                    <td>2 mins ago</td>
+                                    <td><button class="icon-btn"><i data-lucide="edit-2"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <img src="https://i.pravatar.cc/150?u=jordan" class="user-avatar" style="width: 32px; height: 32px;">
+                                            <div>
+                                                <div style="font-weight: 600;">Jordan Lee</div>
+                                                <div style="font-size: 12px; color: var(--text-muted);">jordan@acme.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Support Agent</td>
+                                    <td><span class="status-pill status-completed">Active</span></td>
+                                    <td>1 hour ago</td>
+                                    <td><button class="icon-btn"><i data-lucide="edit-2"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

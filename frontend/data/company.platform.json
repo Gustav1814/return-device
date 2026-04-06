@@ -1,0 +1,22 @@
+{
+  "name": "DeviceReturn Platform",
+  "logoUrl": "https://picsum.photos/seed/platform/200/50",
+  "faviconUrl": "https://picsum.photos/seed/platform/32/32",
+  "btnBgColor": "#6366f1",
+  "btnTextColor": "#ffffff",
+  "theme": "light",
+  "settings_data": {
+    "dashboard": {
+      "widgets": [
+        { "id": "kpi_in_progress", "visible": true },
+        { "id": "kpi_completed", "visible": true },
+        { "id": "kpi_total_amount", "visible": true },
+        { "id": "kpi_commission", "visible": true }
+      ],
+      "charts": [
+        { "id": "shipments_trend", "visible": true, "range": "90d" },
+        { "id": "revenue_by_period", "visible": true, "range": "90d" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Orders | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search history...">
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Completed Orders</h1>
+                    <div class="toolbar">
+                        <button class="btn btn-outline"><i data-lucide="download"></i> Export History</button>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Equipment</th>
+                                    <th>Status</th>
+                                    <th>Completed Date</th>
+                                    <th>Final Amount</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-8810</td>
+                                    <td>Alice Cooper</td>
+                                    <td>Dell UltraSharp 27"</td>
+                                    <td><span class="status-pill status-completed">Delivered</span></td>
+                                    <td>Oct 15, 2023</td>
+                                    <td>$450.00</td>
+                                    <td><button class="icon-btn"><i data-lucide="eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8805</td>
+                                    <td>Bob Marley</td>
+                                    <td>MacBook Air M2</td>
+                                    <td><span class="status-pill status-completed">Delivered</span></td>
+                                    <td>Oct 12, 2023</td>
+                                    <td>$1,100.00</td>
+                                    <td><button class="icon-btn"><i data-lucide="eye"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

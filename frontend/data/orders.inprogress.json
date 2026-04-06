@@ -1,0 +1,4 @@
+[
+  { "id": "ORD-8821", "customer": "John Smith", "equipment": "MacBook Pro 16\"", "status": "In Transit", "label_state": "Active", "date": "2023-10-24" },
+  { "id": "ORD-8819", "customer": "Sarah Connor", "equipment": "Lenovo ThinkPad X1", "status": "Label Created", "label_state": "Pending Pickup", "date": "2023-10-22" }
+]

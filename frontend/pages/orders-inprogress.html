@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Progress Orders | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+            <div class="sidebar-footer">
+                <div class="user-block">
+                    <img src="https://i.pravatar.cc/150?u=harper" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Harper Nelson</span>
+                        <span class="user-role">Admin Manager</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search orders...">
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">In-Progress Orders</h1>
+                    <div class="toolbar">
+                        <button class="btn btn-outline"><i data-lucide="filter"></i> Filter</button>
+                        <button class="btn btn-outline"><i data-lucide="download"></i> Export CSV</button>
+                        <a href="/frontend/pages/order-create.html" class="btn btn-primary"><i data-lucide="plus"></i> New Order</a>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Equipment</th>
+                                    <th>Status</th>
+                                    <th>Label State</th>
+                                    <th>Created</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table-body">
+                                <!-- Mock Data -->
+                                <tr>
+                                    <td>#ORD-8821</td>
+                                    <td>John Smith</td>
+                                    <td>MacBook Pro 16"</td>
+                                    <td><span class="status-pill status-progress">In Transit</span></td>
+                                    <td><span class="status-pill" style="background: #e0f2fe; color: #0369a1;">Active</span></td>
+                                    <td>Oct 24, 2023</td>
+                                    <td><button class="icon-btn"><i data-lucide="more-horizontal"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8819</td>
+                                    <td>Sarah Connor</td>
+                                    <td>Lenovo ThinkPad X1</td>
+                                    <td><span class="status-pill status-pending">Label Created</span></td>
+                                    <td><span class="status-pill" style="background: #fef3c7; color: #92400e;">Pending Pickup</span></td>
+                                    <td>Oct 22, 2023</td>
+                                    <td><button class="icon-btn"><i data-lucide="more-horizontal"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 14px; color: var(--text-muted);">Showing 1 to 10 of 42 orders</span>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-outline btn-sm">Previous</button>
+                            <button class="btn btn-outline btn-sm">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

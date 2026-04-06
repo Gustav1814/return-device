@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <h2 style="font-size: 18px; font-weight: 600;">Account Settings</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">My Profile</h1>
+                    <button class="btn btn-primary">Save Profile</button>
+                </div>
+
+                <div class="dashboard-row">
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Personal Information</h3>
+                        <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
+                            <div style="position: relative;">
+                                <img src="https://i.pravatar.cc/150?u=harper" class="user-avatar" style="width: 100px; height: 100px;">
+                                <button class="icon-btn" style="position: absolute; bottom: 0; right: 0; background: var(--bg-card); border: 1px solid var(--border-color);"><i data-lucide="camera"></i></button>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 18px; font-weight: 600;">Harper Nelson</h4>
+                                <p style="color: var(--text-muted);">Admin Manager at Acme Corp</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" value="Harper">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" value="Nelson">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" value="harper@acme.com">
+                        </div>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Security</h3>
+                        <div class="form-group">
+                            <label class="form-label">Current Password</label>
+                            <input type="password" class="form-input" placeholder="••••••••">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">New Password</label>
+                            <input type="password" class="form-input" placeholder="Enter new password">
+                        </div>
+                        <button class="btn btn-outline" style="width: 100%;">Update Password</button>
+                        
+                        <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color);">
+                            <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Two-Factor Authentication</h4>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 14px; color: var(--text-muted);">Secure your account with 2FA</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

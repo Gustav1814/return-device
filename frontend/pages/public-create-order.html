@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your Return | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="auth-shell">
+        <div class="card reveal" style="max-width: 500px; padding: 40px;">
+            <div style="text-align: center; margin-bottom: 32px;">
+                <h1 style="font-size: 24px; font-weight: 700;">Return Your Device</h1>
+                <p style="color: var(--text-muted); font-size: 14px;">Enter your details to generate a shipping label</p>
+            </div>
+
+            <form action="/frontend/pages/thank-you.html">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Equipment to Return</label>
+                    <select class="form-input">
+                        <option>Laptop (MacBook/ThinkPad)</option>
+                        <option>Monitor</option>
+                        <option>Tablet / Phone</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Pickup Address</label>
+                    <textarea class="form-input" rows="3" placeholder="123 Main St, Apt 4B, New York, NY 10001"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">
+                    Generate Return Label
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

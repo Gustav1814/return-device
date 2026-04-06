@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Settings | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <h2 style="font-size: 18px; font-weight: 600;">System Settings</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Price Settings</h1>
+                    <button class="btn btn-primary">Update Prices</button>
+                </div>
+
+                <div class="card reveal">
+                    <h3 class="card-title" style="margin-bottom: 24px;">Equipment Return Fees</h3>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Equipment Type</th>
+                                    <th>Base Fee</th>
+                                    <th>Insurance (Optional)</th>
+                                    <th>Total Estimate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Laptop</strong></td>
+                                    <td><input type="text" class="form-input" value="$45.00" style="width: 100px;"></td>
+                                    <td><input type="text" class="form-input" value="$15.00" style="width: 100px;"></td>
+                                    <td>$60.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Monitor</strong></td>
+                                    <td><input type="text" class="form-input" value="$35.00" style="width: 100px;"></td>
+                                    <td><input type="text" class="form-input" value="$10.00" style="width: 100px;"></td>
+                                    <td>$45.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
+                        * Base fee includes label generation and standard shipping. Validation helper: Ensure amounts are in USD.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

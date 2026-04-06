@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commissions | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="banknote"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+            <div class="sidebar-footer">
+                <div class="user-block">
+                    <img src="https://i.pravatar.cc/150?u=harper" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Harper Nelson</span>
+                        <span class="user-role">Admin Manager</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search commissions...">
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Commission Settings</h1>
+                </div>
+
+                <div class="card reveal">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Partner</th>
+                                    <th>Commission Rate</th>
+                                    <th>Total Earned</th>
+                                    <th>Last Payout</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Acme Partner</td>
+                                    <td>15%</td>
+                                    <td>$4,250.00</td>
+                                    <td>Oct 01, 2023</td>
+                                    <td><button class="icon-btn"><i data-lucide="edit"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Tech Logistics</td>
+                                    <td>10%</td>
+                                    <td>$1,120.00</td>
+                                    <td>Sep 15, 2023</td>
+                                    <td><button class="icon-btn"><i data-lucide="edit"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

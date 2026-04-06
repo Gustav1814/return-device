@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupons | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="ticket"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+            <div class="sidebar-footer">
+                <div class="user-block">
+                    <img src="https://i.pravatar.cc/150?u=harper" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Harper Nelson</span>
+                        <span class="user-role">Admin Manager</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search coupons...">
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Coupons</h1>
+                    <div class="toolbar">
+                        <button class="btn btn-primary"><i data-lucide="plus"></i> Create Coupon</button>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Discount</th>
+                                    <th>Usage</th>
+                                    <th>Expiry</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font-mono font-bold">WELCOME20</span></td>
+                                    <td>20% OFF</td>
+                                    <td>145 / 500</td>
+                                    <td>Dec 31, 2023</td>
+                                    <td><span class="status-pill status-completed">Active</span></td>
+                                    <td><button class="icon-btn"><i data-lucide="more-horizontal"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-mono font-bold">BLACKFRIDAY</span></td>
+                                    <td>$50.00</td>
+                                    <td>12 / 100</td>
+                                    <td>Nov 30, 2023</td>
+                                    <td><span class="status-pill status-pending">Scheduled</span></td>
+                                    <td><button class="icon-btn"><i data-lucide="more-horizontal"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

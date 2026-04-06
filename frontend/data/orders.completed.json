@@ -1,0 +1,4 @@
+[
+  { "id": "ORD-8810", "customer": "Alice Cooper", "equipment": "Dell UltraSharp 27\"", "status": "Delivered", "date": "2023-10-15", "amount": 450 },
+  { "id": "ORD-8805", "customer": "Bob Marley", "equipment": "MacBook Air M2", "status": "Delivered", "date": "2023-10-12", "amount": 1100 }
+]

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <h2 style="font-size: 18px; font-weight: 600;">New Return Order</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Create Order</h1>
+                </div>
+
+                <div class="dashboard-row">
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Single Device Return</h3>
+                        <form id="create-order-form">
+                            <div class="form-group">
+                                <label class="form-label">Customer Name</label>
+                                <input type="text" class="form-input" placeholder="e.g. John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Customer Email</label>
+                                <input type="email" class="form-input" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Equipment Type</label>
+                                <select class="form-input">
+                                    <option>Laptop</option>
+                                    <option>Monitor</option>
+                                    <option>Tablet</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Serial Number (Optional)</label>
+                                <input type="text" class="form-input" placeholder="SN-XXXX-XXXX">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Create & Generate Label</button>
+                        </form>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Bulk Import</h3>
+                        <div style="text-align: center; padding: 40px 20px; border: 2px dashed var(--border-color); border-radius: var(--radius-md);">
+                            <i data-lucide="upload-cloud" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 16px;"></i>
+                            <p style="font-size: 14px; margin-bottom: 16px;">Drag and drop your CSV file here</p>
+                            <button class="btn btn-outline">Select File</button>
+                        </div>
+                        <div style="margin-top: 24px;">
+                            <a href="#" style="font-size: 12px; color: var(--brand-primary);"><i data-lucide="download" style="width: 12px; height: 12px;"></i> Download CSV Template</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('create-order-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Order created! Redirecting to payment...");
+            window.location.href = "/frontend/pages/order-payment.html";
+        });
+    </script>
+</body>
+</html>

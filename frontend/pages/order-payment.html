@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Payment | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <div class="content-wrapper">
+                <div style="max-width: 600px; margin: 40px auto;">
+                    <div class="card reveal">
+                        <h1 class="page-title" style="margin-bottom: 24px; text-align: center;">Order Summary</h1>
+                        
+                        <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                                <span style="color: var(--text-muted);">Order ID</span>
+                                <span style="font-weight: 600;">#ORD-9901</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                                <span style="color: var(--text-muted);">Equipment</span>
+                                <span style="font-weight: 600;">MacBook Pro 16"</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-muted);">Shipping Label</span>
+                                <span style="font-weight: 600;">FedEx Ground</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 32px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                                <span>Base Fee</span>
+                                <span>$45.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                                <span>Insurance</span>
+                                <span>$15.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 20px; font-weight: 700; margin-top: 20px; padding-top: 20px; border-top: 2px solid var(--border-color);">
+                                <span>Total Amount</span>
+                                <span style="color: var(--brand-primary);">$60.00</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" style="width: 100%; height: 50px; font-size: 16px;">
+                            Pay with Stripe
+                        </button>
+                        
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="/frontend/pages/order-create.html" style="font-size: 14px; color: var(--text-muted);">Cancel and return</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

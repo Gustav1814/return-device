@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Device Return - Modern IT Asset Logistics Dashboard">
+    <meta name="theme-color" content="#6366f1">
+    <title>Dashboard | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+</head>
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            
+            <nav class="sidebar-nav" id="main-nav">
+                <!-- Nav items injected by navigation.js -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="nav-item" style="margin-bottom: 12px;">
+                    <i data-lucide="moon"></i>
+                    <span>Dark Mode</span>
+                    <label class="switch" style="margin-left: auto;">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="user-block">
+                    <img src="https://i.pravatar.cc/150?u=harper" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Harper Nelson</span>
+                        <span class="user-role">Admin Manager</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search orders, serials... (⌘ + F)">
+                </div>
+                <div class="top-actions">
+                    <button class="icon-btn"><i data-lucide="gift"></i></button>
+                    <button class="icon-btn">
+                        <i data-lucide="bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <a href="/frontend/pages/order-create.html" class="btn btn-primary">
+                        <i data-lucide="plus"></i>
+                        <span>New Order</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Dashboard</h1>
+                    <div class="toolbar">
+                        <select class="btn btn-outline">
+                            <option>Last 30 Days</option>
+                            <option>Last 90 Days</option>
+                            <option>This Year</option>
+                        </select>
+                        <button class="btn btn-outline"><i data-lucide="filter"></i> Filter</button>
+                        <button class="btn btn-outline"><i data-lucide="download"></i> Export</button>
+                    </div>
+                </div>
+
+                <!-- KPI Row -->
+                <div class="kpi-grid reveal">
+                    <div class="card kpi-card" id="kpi_in_progress">
+                        <span class="kpi-label">In Progress Shipments</span>
+                        <div class="kpi-value">1,240</div>
+                        <div class="kpi-trend trend-up">
+                            <i data-lucide="trending-up"></i> 12.5%
+                        </div>
+                    </div>
+                    <div class="card kpi-card" id="kpi_completed">
+                        <span class="kpi-label">Completed Shipments</span>
+                        <div class="card-icon"></div>
+                        <div class="kpi-value">8,432</div>
+                        <div class="kpi-trend trend-up">
+                            <i data-lucide="trending-up"></i> 8.2%
+                        </div>
+                    </div>
+                    <div class="card kpi-card" id="kpi_total_amount">
+                        <span class="kpi-label">Total Paid Amount</span>
+                        <div class="kpi-value">$42,500.00</div>
+                        <div class="kpi-trend trend-down">
+                            <i data-lucide="trending-down"></i> 2.4%
+                        </div>
+                    </div>
+                    <div class="card kpi-card dashed-card" id="add-widget">
+                        <i data-lucide="plus-circle" style="width: 32px; height: 32px; color: var(--text-muted);"></i>
+                        <span class="kpi-label">Add Widget</span>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="dashboard-row">
+                    <div class="card reveal">
+                        <div class="card-header">
+                            <h3 class="card-title">Sales Overview</h3>
+                            <div class="card-actions">
+                                <span class="legend-item"><span class="dot" style="background: #6366f1;"></span> Revenue</span>
+                                <span class="legend-item"><span class="dot" style="background: #10b981;"></span> Margin</span>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="shipmentsTrendChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="card reveal">
+                        <div class="card-header">
+                            <h3 class="card-title">Equipment Distribution</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="equipmentDistChart"></canvas>
+                        </div>
+                        <div class="chart-legend" id="equipment-legend">
+                            <!-- Injected by charts.js -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity / Table Row -->
+                <div class="dashboard-row reveal" style="margin-top: 24px;">
+                    <div class="card table-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Shipments</h3>
+                            <a href="/frontend/pages/orders-inprogress.html" class="btn-link">See all</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Equipment</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#ORD-8821</td>
+                                        <td>MacBook Pro 16"</td>
+                                        <td><span class="status-pill status-progress">In Transit</span></td>
+                                        <td>Oct 24, 2023</td>
+                                        <td>$1,200.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-8820</td>
+                                        <td>Dell UltraSharp 27"</td>
+                                        <td><span class="status-pill status-completed">Delivered</span></td>
+                                        <td>Oct 23, 2023</td>
+                                        <td>$450.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-8819</td>
+                                        <td>Lenovo ThinkPad X1</td>
+                                        <td><span class="status-pill status-pending">Label Created</span></td>
+                                        <td>Oct 22, 2023</td>
+                                        <td>$950.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script type="module" src="/frontend/assets/js/charts.js"></script>
+    <script type="module" src="/frontend/assets/js/dashboard.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

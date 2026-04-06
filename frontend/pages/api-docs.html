@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Integration | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <h2 style="font-size: 18px; font-weight: 600;">Developer Tools</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">API Integration</h1>
+                </div>
+
+                <div class="card reveal" style="margin-bottom: 24px;">
+                    <h3 class="card-title">Your API Key</h3>
+                    <div style="display: flex; gap: 12px; margin-top: 16px;">
+                        <input type="password" class="form-input" value="sk_live_51MzX..." readonly style="font-family: monospace;">
+                        <button class="btn btn-outline">Copy</button>
+                        <button class="btn btn-outline" style="color: var(--chart-4);">Regenerate</button>
+                    </div>
+                    <p style="margin-top: 12px; font-size: 12px; color: var(--text-muted);">
+                        Keep this key secret. Do not share it in client-side code.
+                    </p>
+                </div>
+
+                <div class="card reveal">
+                    <h3 class="card-title">Quick Start Guide</h3>
+                    <div style="margin-top: 20px;">
+                        <h4 style="font-size: 14px; margin-bottom: 8px;">Create an Order</h4>
+                        <pre style="background: var(--bg-page); padding: 16px; border-radius: var(--radius-md); font-size: 12px; overflow-x: auto;">
+curl -X POST https://api.devicereturn.com/v1/orders \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{
+    "customer_name": "Jane Doe",
+    "equipment_type": "laptop",
+    "email": "jane@example.com"
+  }'
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

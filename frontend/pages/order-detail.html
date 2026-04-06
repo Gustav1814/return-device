@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Detail | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <h2 style="font-size: 18px; font-weight: 600;">Order Details</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <a href="/frontend/pages/orders-inprogress.html" class="icon-btn"><i data-lucide="arrow-left"></i></a>
+                        <h1 class="page-title">Order #ORD-8821</h1>
+                        <span class="status-pill status-progress">In Transit</span>
+                    </div>
+                    <div class="toolbar">
+                        <button class="btn btn-outline"><i data-lucide="printer"></i> Print Label</button>
+                        <button class="btn btn-primary">Mark as Completed</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-row">
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Shipment Timeline</h3>
+                        <div class="timeline" style="position: relative; padding-left: 32px;">
+                            <div style="position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--border-color);"></div>
+                            
+                            <div style="position: relative; margin-bottom: 32px;">
+                                <div style="position: absolute; left: -32px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--brand-primary); border: 4px solid var(--bg-card);"></div>
+                                <div style="font-weight: 600;">Arrived at Sorting Facility</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Oct 25, 2023 - 10:30 AM</div>
+                                <p style="font-size: 14px; margin-top: 4px;">Shipment scanned at Chicago, IL hub.</p>
+                            </div>
+
+                            <div style="position: relative; margin-bottom: 32px;">
+                                <div style="position: absolute; left: -32px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--brand-primary); border: 4px solid var(--bg-card);"></div>
+                                <div style="font-weight: 600;">Picked Up by Carrier</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Oct 24, 2023 - 02:15 PM</div>
+                                <p style="font-size: 14px; margin-top: 4px;">FedEx picked up the package from customer address.</p>
+                            </div>
+
+                            <div style="position: relative;">
+                                <div style="position: absolute; left: -32px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--brand-primary); border: 4px solid var(--bg-card);"></div>
+                                <div style="font-weight: 600;">Label Created</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Oct 24, 2023 - 09:00 AM</div>
+                                <p style="font-size: 14px; margin-top: 4px;">Order initiated by Acme Partner.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Customer Info</h3>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                            <img src="https://i.pravatar.cc/150?u=john" class="user-avatar" style="width: 48px; height: 48px;">
+                            <div>
+                                <div style="font-weight: 600;">John Smith</div>
+                                <div style="font-size: 14px; color: var(--text-muted);">john.smith@example.com</div>
+                            </div>
+                        </div>
+                        <div style="font-size: 14px;">
+                            <div style="margin-bottom: 12px;">
+                                <div style="color: var(--text-muted); font-size: 12px; text-transform: uppercase;">Equipment</div>
+                                <div>MacBook Pro 16" (2021)</div>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <div style="color: var(--text-muted); font-size: 12px; text-transform: uppercase;">Serial Number</div>
+                                <div style="font-family: monospace;">C02Z1234MD6M</div>
+                            </div>
+                            <div>
+                                <div style="color: var(--text-muted); font-size: 12px; text-transform: uppercase;">Return Address</div>
+                                <div>123 Main St, Apt 4B<br>New York, NY 10001</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

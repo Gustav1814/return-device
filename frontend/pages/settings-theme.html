@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Settings | Device Return</title>
+    <link rel="stylesheet" href="/frontend/assets/css/tokens.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <link rel="stylesheet" href="/frontend/assets/css/pages.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i data-lucide="refresh-cw"></i></div>
+                <span class="user-name" style="font-size: 18px;">DeviceReturn</span>
+            </div>
+            <nav class="sidebar-nav" id="main-nav"></nav>
+        </aside>
+
+        <main class="main-container">
+            <header class="top-bar">
+                <button class="icon-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+                <h2 style="font-size: 18px; font-weight: 600;">Settings</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header reveal">
+                    <h1 class="page-title">Company Branding</h1>
+                    <button class="btn btn-primary" id="save-settings">Save Changes</button>
+                </div>
+
+                <div class="dashboard-row">
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Visual Identity</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" class="form-input" value="Acme Partner">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Logo URL</label>
+                            <div style="display: flex; gap: 12px;">
+                                <input type="text" class="form-input" value="https://picsum.photos/seed/acme/200/50">
+                                <button class="btn btn-outline">Upload</button>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label class="form-label">Primary Color</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="color" class="form-input" style="width: 48px; padding: 2px;" value="#10b981">
+                                    <input type="text" class="form-input" value="#10b981">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Default Theme</label>
+                                <select class="form-input">
+                                    <option>Light</option>
+                                    <option>Dark</option>
+                                    <option>System</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3 class="card-title" style="margin-bottom: 24px;">Dashboard Widgets</h3>
+                        <div id="widget-toggles">
+                            <div class="nav-item" style="padding: 12px 0; border-bottom: 1px solid var(--border-color);">
+                                <span>In Progress Shipments</span>
+                                <label class="switch" style="margin-left: auto;">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="nav-item" style="padding: 12px 0; border-bottom: 1px solid var(--border-color);">
+                                <span>Completed Shipments</span>
+                                <label class="switch" style="margin-left: auto;">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="nav-item" style="padding: 12px 0; border-bottom: 1px solid var(--border-color);">
+                                <span>Total Paid Amount</span>
+                                <label class="switch" style="margin-left: auto;">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="nav-item" style="padding: 12px 0;">
+                                <span>Commission Amount</span>
+                                <label class="switch" style="margin-left: auto;">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/frontend/assets/js/navigation.js"></script>
+    <script type="module" src="/frontend/assets/js/theme.js"></script>
+    <script type="module">
+        import { themeManager } from '/frontend/assets/js/theme.js';
+        
+        lucide.createIcons();
+        
+        const brand = new URLSearchParams(window.location.search).get('brand') || 'partner';
+        
+        document.getElementById('save-settings').addEventListener('click', () => {
+            const companyName = document.querySelector('input[value="Acme Partner"]').value;
+            const logoUrl = document.querySelector('input[value="https://picsum.photos/seed/acme/200/50"]').value;
+            const primaryColor = document.querySelector('input[type="color"]').value;
+            const theme = document.querySelector('select').value.toLowerCase();
+            
+            const config = {
+                name: companyName,
+                logoUrl: logoUrl,
+                btnBgColor: primaryColor,
+                theme: theme,
+                settings_data: {
+                    dashboard: {
+                        widgets: Array.from(document.querySelectorAll('#widget-toggles input')).map((input, i) => ({
+                            id: ["kpi_in_progress", "kpi_completed", "kpi_total_amount", "kpi_commission"][i],
+                            visible: input.checked
+                        }))
+                    }
+                }
+            };
+            
+            localStorage.setItem(`company_config_${brand}`, JSON.stringify(config));
+            localStorage.setItem('theme', theme);
+            
+            // Apply immediately
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.setProperty('--brand-primary', primaryColor);
+            
+            alert("Settings saved successfully! Refreshing branding...");
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
