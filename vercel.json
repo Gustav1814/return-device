@@ -2,8 +2,7 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/frontend/(.*)",
-      "destination": "/frontend/$1"
+      "handle": "filesystem"
     },
     {
       "source": "/(.*)",
