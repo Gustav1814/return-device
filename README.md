@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🔄 Device Return — SaaS Device Recovery Platform
 
 <p align="center">
@@ -237,3 +238,109 @@ This project is open-sourced under the [MIT License](https://opensource.org/lice
 <p align="center">
   Built with ❤️ by <a href="https://github.com/Gustav1814">Gustav1814</a>
 </p>
+=======
+# DeviceReturn
+
+A modern return-logistics platform for IT asset recovery, shipment tracking, and operations management.
+
+Built as a full-stack web application with a Laravel backend and a React frontend, this project focuses on practical workflow design: teams can create orders, monitor in-progress and completed returns, and track payment metrics from a single dashboard.
+
+---
+
+## Overview
+
+DeviceReturn helps operations teams manage the full return lifecycle:
+
+- Create and process return orders
+- Track shipment status in real time
+- Manage users, companies, coupons, and commissions
+- Monitor revenue and fulfillment metrics from a centralized dashboard
+- Support both light and dark dashboard experiences
+
+---
+
+## Demo Screens
+
+<p align="center">
+  <img src="docs/screenshots/login-dark.png" alt="Login - dark theme" width="48%" />
+  <img src="docs/screenshots/login-light.png" alt="Login - light theme" width="48%" />
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/dashboard-light.png" alt="Dashboard - light theme" width="48%" />
+  <img src="docs/screenshots/dashboard-dark.png" alt="Dashboard - dark theme" width="48%" />
+</p>
+
+---
+
+## Core Features
+
+- Authentication and role-aware access
+- Order lifecycle management (new, in progress, completed)
+- Bulk order support
+- Company and user administration
+- Coupon and commission modules
+- Analytics dashboard for shipments and payments
+- API integration area for external systems
+- Theme toggle (light/dark mode)
+
+---
+
+## Tech Stack
+
+- **Backend:** Laravel, PHP
+- **Frontend:** React, TypeScript, Vite
+- **Database:** MySQL
+- **Styling:** Custom CSS (dashboard and SaaS UI layers)
+
+---
+
+## Project Structure
+
+```text
+app/                Laravel controllers, models, services
+resources/js/react/ React SPA screens, routes, components
+resources/views/    Blade views
+routes/             Web and API route definitions
+database/           Migrations and seeders
+public/             Static assets
+docs/screenshots/   README demo images
+```
+
+---
+
+## Run Locally
+
+### Prerequisites
+
+- PHP 8+
+- Composer
+- Node.js 18+
+- MySQL
+
+### Installation
+
+```bash
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+```
+
+Update your `.env` values (database, mail, app URL), then run:
+
+```bash
+php artisan migrate
+php artisan serve
+npm run dev
+```
+
+Application URL: `http://127.0.0.1:8000`
+
+---
+
+## Portfolio Note
+
+This repository is a portfolio-safe version of the project.  
+Sensitive credentials and private environment configuration are intentionally excluded.
+>>>>>>> ef70610 (Refresh portfolio README with a polished project narrative and visual demo gallery.)
