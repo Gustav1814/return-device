@@ -1,0 +1,103 @@
+body {
+    font-size: 1rem;
+}
+  
+  .feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+  }
+  
+  /*
+   * Sidebar
+   */
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    box-shadow: inset -1px 0 0 var(--text-color);
+  }
+  .nav-link, .nav-link:focus, .nav-link:hover{
+      color: var(--text-color) !important;
+      text-decoration: none;
+  }
+  @media (max-width: 767.98px) {
+    .sidebar {
+      top: 4rem;
+    }
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+  
+  .sidebar .nav-link {
+    font-weight: 300;
+  }
+  
+  .sidebar .nav-link.active {
+    color: var(--button-background);
+  }
+  
+  .sidebar .nav-link:hover .feather,
+  .sidebar .nav-link.active .feather {
+    color: inherit;
+  }
+  
+  .sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
+  
+  /*
+   * Navbar
+   */
+   .navbar{
+    background: var(--background-color);
+    box-shadow: inset 0px -1px 1px var(--text-color);
+   }
+   .shadow{
+    box-shadow: 0rem .2rem .5rem var(--text-color)!important;
+   }
+  .navbar-brand {
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    font-size: 1rem;
+  }
+  
+  .navbar .navbar-toggler {
+    top: 1.2rem;
+    right: 1rem;
+    width: auto;
+    display: inline-flex;
+    background-color: var(--text-color);
+    padding: 0.5rem;
+  }
+  .dropdown-item.active, .dropdown-item:active{
+    background-color: var(--text-color);
+  }
+  
+  .navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+  }
+  
+  .form-control-dark {
+    color: #fff;
+  }
+  
+  .form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+  }
+  

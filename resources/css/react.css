@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .app-shell {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+  }
+
+  .app-shell > aside.sidebar {
+    flex: 0 0 auto;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    max-height: 100vh;
+  }
+
+  .app-shell > main.main-container {
+    flex: 1 1 0%;
+    min-width: 0;
+    position: relative;
+  }
+}

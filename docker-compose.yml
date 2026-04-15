@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # ── Laravel Application ────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: return-device-app
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      - APP_NAME=Device Return
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_URL=http://localhost:8000
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=returndevice
+      - DB_USERNAME=returndevice
+      - DB_PASSWORD=secret
+    volumes:
+      - app-storage:/var/www/html/storage
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - return-device
+
+  # ── MySQL Database ─────────────────────────────────────────────────
+  db:
+    image: mysql:8.0
+    container_name: return-device-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: returndevice
+      MYSQL_USER: returndevice
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: rootsecret
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - return-device
+
+volumes:
+  db-data:
+  app-storage:
+
+networks:
+  return-device:
+    driver: bridge

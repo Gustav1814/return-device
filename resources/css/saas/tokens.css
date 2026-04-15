@@ -1,0 +1,224 @@
+:root {
+  /* Native controls (select, scrollbars) follow theme; avoids light popup on dark pages */
+  color-scheme: light;
+
+  /* Brand Colors - Nexus Indigo Theme */
+  --brand-primary: #6366f1;
+  --brand-primary-rgb: 99, 102, 241;
+  --brand-secondary: #10b981;
+  --brand-secondary-rgb: 16, 185, 129;
+  --brand-accent: #a855f7;
+  --brand-accent-rgb: 168, 85, 247;
+
+  /* Motion (production: one easing family, predictable durations) */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast: 160ms;
+  --dur-base: 220ms;
+  --dur-slow: 360ms;
+  --dur-menu: 200ms;
+
+  /* Full-app gradient wash (readable, not just accent dots) */
+  --bg-mesh:
+    radial-gradient(120% 85% at 100% -10%, rgba(var(--brand-primary-rgb), 0.11) 0%, transparent 52%),
+    radial-gradient(95% 75% at -5% 105%, rgba(var(--brand-accent-rgb), 0.09) 0%, transparent 48%),
+    radial-gradient(70% 45% at 50% 100%, rgba(var(--brand-accent-rgb), 0.06) 0%, transparent 42%),
+    linear-gradient(168deg, #eef2ff 0%, #f8fafc 42%, #eef2ff 100%);
+
+  --bg-card-wash: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(248, 250, 252, 0.92) 42%,
+    rgba(239, 246, 255, 0.88) 100%
+  );
+
+  --bg-sidebar-wash: linear-gradient(
+    185deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(245, 247, 255, 0.97) 38%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  --bg-topbar-wash: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(248, 250, 252, 0.88) 45%,
+    rgba(255, 255, 255, 0.94) 100%
+  );
+
+  /* UI Colors - Light Theme */
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-sidebar-active: #f5f7ff;
+  
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  --border-color: #e2e8f0;
+  --input-bg: #ffffff;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-3d: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Glassmorphism - Light */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(12px);
+
+  /* Vibrant Gradients */
+  --grad-primary: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+  /* Primary buttons only; falls back to soft --brand-accent until JS sets --brand-accent-cta */
+  --grad-primary-cta: linear-gradient(
+    135deg,
+    var(--brand-primary) 0%,
+    var(--brand-accent-cta, var(--brand-accent)) 100%
+  );
+  --grad-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  --grad-warning: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  --grad-danger: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+  --grad-surface: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(239, 246, 255, 0.55) 50%,
+    rgba(238, 242, 255, 0.65) 100%
+  );
+  --grad-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  --grad-outline-hover: linear-gradient(
+    135deg,
+    rgba(var(--brand-primary-rgb), 0.35) 0%,
+    rgba(var(--brand-accent-rgb), 0.25) 100%
+  );
+
+  --chart-1: #10b981;
+  --chart-2: #6366f1;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #8b5cf6;
+  --chart-6: #ec4899;
+
+  /* Spacing & Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Buttons — pill “chip” surfaces (outline / quiet actions) */
+  --btn-pill-radius: var(--radius-full);
+  --btn-secondary-bg: #eef2f6;
+  --btn-secondary-bg-hover: #e2e8f0;
+  --btn-secondary-border: rgba(15, 23, 42, 0.12);
+  --btn-secondary-text: #1e293b;
+
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 64px;
+
+  /* Transitions */
+  --transition-base: color var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-smooth), opacity var(--dur-fast) var(--ease-out);
+  --transition-slow: transform var(--dur-slow) var(--ease-smooth), opacity var(--dur-slow) var(--ease-smooth),
+    box-shadow var(--dur-slow) var(--ease-smooth);
+  --transition-micro: transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-out);
+  --transition-tooltip: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-smooth);
+  --transition-nav-shine: left var(--dur-slow) var(--ease-out);
+  --transition-sidebar-slide: left var(--dur-slow) var(--ease-smooth), box-shadow var(--dur-slow) var(--ease-smooth);
+  --transition-collapse-btn: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-smooth);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* AMOLED base + tinted mesh (gradients read as atmosphere, not only borders) */
+  --bg-page: #000000;
+  --bg-card: #000000;
+  --bg-sidebar: #000000;
+  --bg-sidebar-active: #0d0d1a;
+
+  --bg-mesh:
+    radial-gradient(115% 80% at 100% -5%, rgba(var(--brand-primary-rgb), 0.18) 0%, transparent 52%),
+    radial-gradient(90% 70% at 0% 102%, rgba(var(--brand-accent-rgb), 0.12) 0%, transparent 48%),
+    radial-gradient(65% 45% at 50% 100%, rgba(var(--brand-accent-rgb), 0.1) 0%, transparent 45%),
+    linear-gradient(168deg, #06060c 0%, #000000 45%, #050508 100%);
+
+  /* AMOLED black base + always-on soft wash from company primary / accent (updates with --brand-*-rgb) */
+  --bg-card-wash:
+    linear-gradient(
+      155deg,
+      rgba(var(--brand-primary-rgb), 0.13) 0%,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(var(--brand-accent-rgb), 0.08) 100%
+    ),
+    radial-gradient(115% 95% at 100% -25%, rgba(var(--brand-primary-rgb), 0.16) 0%, transparent 52%),
+    radial-gradient(90% 75% at -5% 105%, rgba(var(--brand-accent-rgb), 0.1) 0%, transparent 48%),
+    #000000;
+
+  --bg-sidebar-wash: linear-gradient(
+    185deg,
+    rgba(10, 8, 14, 1) 0%,
+    rgba(var(--brand-primary-rgb), 0.07) 38%,
+    rgba(4, 4, 10, 1) 52%,
+    rgba(var(--brand-accent-rgb), 0.05) 100%
+  );
+
+  --bg-topbar-wash: linear-gradient(
+    90deg,
+    rgba(8, 8, 12, 0.92) 0%,
+    rgba(4, 6, 10, 0.9) 50%,
+    rgba(8, 8, 14, 0.92) 100%
+  );
+
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-inverse: #000000;
+
+  --border-color: #1a1a2e;
+  --input-bg: #05050b;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.8);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.9);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 1);
+  --shadow-3d: 0 20px 25px -5px rgba(0, 0, 0, 0.8);
+
+  --glass-bg: rgba(13, 13, 26, 0.55);
+  --glass-border: rgba(var(--brand-primary-rgb), 0.16);
+  --glass-blur: blur(14px);
+
+  --btn-secondary-bg: #161616;
+  --btn-secondary-bg-hover: #1f1f1f;
+  --btn-secondary-border: rgba(255, 255, 255, 0.12);
+  --btn-secondary-text: #e8eaed;
+
+  --grad-surface: linear-gradient(
+    145deg,
+    rgba(var(--brand-primary-rgb), 0.1) 0%,
+    #000000 38%,
+    #000000 62%,
+    rgba(var(--brand-accent-rgb), 0.07) 100%
+  );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reduced motion: shorten (not zero) so paint still completes in some engines */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
